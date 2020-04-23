@@ -1,7 +1,7 @@
 .button {
   display: inline-block;
   transition: 0.3s ease-in-out;
-  background: set-color('default');
+  background-color: set-color('default');
   cursor: pointer;
   padding: rem-calc(10 25);
   text-align: center;
@@ -37,7 +37,17 @@
 
   &:hover,
   &:focus {
-    background: set-color('primary-solid');
+    background-color: set-color('primary-solid');
     color: set-color('white');
+  }
+
+  &--primary {
+    color: set-color('white');
+    background-color: set-color('primary-solid');
+
+    &__gradient {
+      color: set-color('white');
+      background: set-color('primary-gradient');
+    }
   }
 }
