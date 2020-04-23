@@ -35,16 +35,29 @@
 @mixin grid-column-classes($columns: 12) {
   @each $breakpoint in $breakpoints-map {
     @for $i from 1 through $columns {
-      @media all and ('min-width: #{breakpoint}') {
-        .column-#{$breakpoint}-#{$i} {
-          flex: 0 0 auto;
+      @media all and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+        .col-#{$breakpoint}#{$i} {
+          display: flex;
+          flex: 1 1 auto;
           width: percentage($i / $columns);
           min-width: 0;
         }
       }
     }
   }
+
+  @each $size, $width in $breakpoints {
+    @media all and (min-width: #{$width}) {
+      @for $i from 1 to $columns + 1 {
+        .row .offset-#{$size}#{$i} {
+          margin-left: percentage($i / $columns);
+        }
+      }
+    }
+  }
 }
+
+
 
 //Get Spacing Map
 @function get-spacing($size, $viewport-size: 'md') {
