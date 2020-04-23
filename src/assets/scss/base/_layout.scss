@@ -1,0 +1,133 @@
+$breakpoints: (
+  sm: 0,
+  md: 600px,
+  lg: 900px,
+  xl: 1200px,
+  xxl: 1600px,
+);
+
+$display-breakpoints: (
+  sm-only: "only screen and (max-width: #{map-get($breakpoints, 'md') - 1})",
+  sm-and-up: "only screen and (min-width: #{map-get($breakpoints, 'sm')})",
+  md-only: "only screen and (min-width: #{map-get($breakpoints, 'md') - 1}) and (max-width: #{map-get($breakpoints, 'lg') - 1})",
+  md-and-down: "only screen and (max-width: #{map-get($breakpoints, 'lg') - 1})",
+  md-and-up: "only screen and (min-width: #{map-get($breakpoints, 'md')})",
+  lg-only: "only screen and (min-width: #{map-get($breakpoints, 'lg') - 1}) and (max-width: #{map-get($breakpoints, 'xl') - 1})",
+  lg-and-down: "only screen and (min-width: #{map-get($breakpoints, 'xl') - 1})",
+  lg-and-up: "only screen and (min-width: #{map-get($breakpoints, 'lg')})",
+  xl-only: "only screen and (min-width: #{map-get($breakpoints, 'xl') - 1}) and (max-width: #{map-get($breakpoints, 'xxl') - 1})",
+  xl-and-down: "only screen and (max-width: #{map-get($breakpoints, 'xxl') - 1})",
+  xl-and-up: "only screen and (min-width: #{map-get($breakpoints, 'xl')})",
+  xxl-only: "only screen and (min-width: #{map-get($breakpoints, 'xxl')})",
+);
+
+$breakpoints-map: map-keys($breakpoints);
+
+@mixin breakpoint($size) {
+  @media #{map-get($display-breakpoints, $size)} {
+    @content;
+  }
+}
+
+@each $breakpoint, $values in $breakpoints {
+  .show-for-#{$breakpoint} {
+    @if $breakpoint == 'sm' {
+      display: block;
+
+      @include breakpoint('#{$breakpoint}-and-up') {
+        display: none;
+      }
+    } @else if $breakpoint == 'xxl' {
+      display: none;
+
+      @include breakpoint('#{$breakpoint}-only') {
+        display: block;
+      }
+    } @else {
+      display: none;
+
+      @include breakpoint('#{$breakpoint}-and-up') {
+        display: block;
+      }
+    }
+  }
+
+  .hide-for-#{$breakpoint} {
+    @if $breakpoint == 'xxl' {
+      @include breakpoint('#{$breakpoint}-only') {
+        display: none;
+      }
+    } @else {
+      @include breakpoint('#{$breakpoint}-and-up') {
+        display: none;
+      }
+    }
+  }
+}
+
+//Spacing Map
+$spacing-map: (
+  'xxs': (
+    'sm': rem-calc(10),
+    'md': rem-calc(15),
+  ),
+  'xs': (
+    'sm': rem-calc(20),
+    'md': rem-calc(20),
+  ),
+  'sm': (
+    'sm': rem-calc(20),
+    'md': rem-calc(30),
+  ),
+  'md': (
+    'sm': rem-calc(30),
+    'md': rem-calc(80),
+  ),
+  'lg': (
+    'sm': rem-calc(40),
+    'md': rem-calc(80),
+  ),
+  'xl': (
+    'sm': rem-calc(60),
+    'md': rem-calc(100),
+  ),
+);
+
+//Generate Padding and Margin Class Helpers
+@each $size-label, $size-values in $spacing-map {
+  .padding-v-#{$size-label} {
+    padding-top: get-spacing($size-label, 'sm');
+    padding-bottom: get-spacing($size-label, 'sm');
+
+    @include breakpoint('lg-and-up') {
+      padding-top: get-spacing($size-label, 'md');
+      padding-bottom: get-spacing($size-label, 'md');
+    }
+  }
+
+  .margin-b-#{$size-label} {
+    margin-bottom: get-spacing($size-label, 'sm');
+
+    @include breakpoint('lg-and-up') {
+      margin-bottom: get-spacing($size-label, 'md');
+    }
+  }
+}
+
+@include grid-column-classes;
+
+.row {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: rem-calc(0 30);
+  width: 100%;
+  max-width: rem-calc(1200);
+
+  &.row-reverse {
+    flex-direction: column;
+    align-items: center;
+  }
+}

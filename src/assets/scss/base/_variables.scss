@@ -1,0 +1,29 @@
+//Colors
+$colors-map: (
+  'base': #303030,
+  'grey-900': #101010,
+  'grey-700': #3c3c3c,
+  'grey-500': #7e7e7e,
+  'grey-300': #d2d2d2,
+  'off-white': #f5f5f5,
+  'white': #ffffff,
+  'primary-solid': #9013fe,
+  'primary-gradient': linear-gradient(41.55deg, #941bff 0%, #f185ce 100%),
+  'secondary-solid': #2dcdd8,
+  'secondary-gradient': linear-gradient(41.55deg, #67e2b3 0%, #2dcdd8 100%),
+  'tertiary': #3380ff,
+  'success': #7ed321,
+  'success-border': #7ed321,
+  'warning': #f96c44,
+  'warning-border': #f3a58f,
+  'danger': #d0021b,
+  'danger-border': #e78490,
+  'default': #eceff1,
+  'default-border': #f5f5f5
+);
+
+//Fonts
+$primary-font: 'Open Sans', Arial, sans-serif;
+
+//Paths
+$img-path: '../images';
