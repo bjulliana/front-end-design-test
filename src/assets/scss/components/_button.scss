@@ -1,0 +1,43 @@
+.button {
+  display: inline-block;
+  transition: 0.3s ease-in-out;
+  background: set-color('default');
+  cursor: pointer;
+  padding: rem-calc(10 25);
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.5;
+  letter-spacing: rem-calc(0.3);
+  white-space: nowrap;
+  color: set-color('base');
+  font-family: $primary-font;
+  font-size: rem-calc(16);
+  font-weight: 700;
+
+  &--small {
+    padding: rem-calc(5 15);
+  }
+
+  &--medium {
+    padding: rem-calc(10 25);
+  }
+
+  &--large {
+    padding: rem-calc(15 35);
+  }
+
+  &--pill {
+    border-radius: rem-calc(100);
+  }
+
+  &--submit {
+    background-color: set-color('success');
+  }
+
+  &:hover,
+  &:focus {
+    background: set-color('primary-solid');
+    color: set-color('white');
+  }
+}

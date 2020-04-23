@@ -1,0 +1,72 @@
+@import 'variables.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: set-color('white');
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  line-height: 1.4;
+  color: set-color('base');
+  font-family: $primary-font;
+  font-size: rem-calc(16);
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+}
+
+footer,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.align-center {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0;
+}

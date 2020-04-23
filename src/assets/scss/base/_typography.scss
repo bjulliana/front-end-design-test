@@ -1,0 +1,92 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: rem-calc(21);
+  text-rendering: optimizeLegibility;
+  color: set-color('base');
+  font-family: $primary-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.5;
+
+  &--subheader {
+    font-weight: 300;
+  }
+}
+
+h1,
+.h1 {
+  font-size: rem-calc(26);
+}
+
+h1,
+.h1 {
+  font-size: rem-calc(36);
+}
+
+h2,
+.h2 {
+  font-size: rem-calc(30);
+}
+
+h3,
+.h3 {
+  font-size: rem-calc(26);
+}
+
+h4,
+.h4 {
+  font-size: rem-calc(22);
+}
+
+h5,
+.h5 {
+  font-size: rem-calc(18);
+}
+
+h6,
+.h6 {
+  font-size: rem-calc(16);
+}
+
+a {
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: 900;
+  color: set-color('tertiary');
+
+  &.underline {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      position: absolute;
+      transition: 0.3s ease-in-out;
+      content: '';
+      width: 0;
+      height: rem-calc(3);
+      left: 0;
+      bottom: 0;
+      background-color: set-color('tertiary');
+    }
+
+    &:focus::after,
+    &:hover::after {
+      width: 100%;
+      height: rem-calc(3);
+    }
+  }
+
+  &:hover {
+    color: set-color('tertiary');
+  }
+}
