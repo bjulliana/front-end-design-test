@@ -1,7 +1,7 @@
 //Colors
 $colors-map: (
   'base': #303030,
-  'grey-900': #101010,
+  'grey-900': #272930,
   'grey-700': #3c3c3c,
   'grey-500': #7e7e7e,
   'grey-300': #d2d2d2,
@@ -9,8 +9,10 @@ $colors-map: (
   'white': #ffffff,
   'primary-solid': #9013fe,
   'primary-gradient': linear-gradient(41.55deg, #941bff 0%, #f185ce 100%),
+  'primary-gradient-reversed': linear-gradient(41.55deg, #f185ce 0%, #941bff 100%),
   'secondary-solid': #2dcdd8,
   'secondary-gradient': linear-gradient(41.55deg, #67e2b3 0%, #2dcdd8 100%),
+  'secondary-gradient-reversed': linear-gradient(41.55deg, #2dcdd8 0%, #67e2b3 100%),
   'tertiary': #3380ff,
   'success': #7ed321,
   'success-border': #7ed321,
@@ -19,7 +21,7 @@ $colors-map: (
   'danger': #d0021b,
   'danger-border': #e78490,
   'default': #eceff1,
-  'default-border': #f5f5f5
+  'default-border': #f5f5f5,
 );
 
 //Fonts
@@ -27,3 +29,8 @@ $primary-font: 'Open Sans', Arial, sans-serif;
 
 //Paths
 $img-path: '../images';
+
+//Color Function
+@function set-color($key) {
+  @return map-get($colors-map, $key);
+}

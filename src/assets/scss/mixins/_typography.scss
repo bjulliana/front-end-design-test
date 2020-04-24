@@ -1,0 +1,21 @@
+@mixin underline($color: 'tertiary') {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    content: '';
+    width: 0;
+    height: rem-calc(3);
+    left: 0;
+    bottom: 0;
+    background-color: set-color($color);
+  }
+
+  &:focus::after,
+  &:hover::after {
+    width: 100%;
+    height: rem-calc(3);
+  }
+}

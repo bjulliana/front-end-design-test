@@ -21,6 +21,16 @@ $display-breakpoints: (
   xxl-only: "only screen and (min-width: #{map-get($breakpoints, 'xxl')})",
 );
 
+$grid-gutter: 1rem;
+$grid-columns: 12;
+$grid-gutters: (
+  xs: $grid-gutter / 4,
+  sm: $grid-gutter / 2,
+  md: $grid-gutter,
+  lg: $grid-gutter * 2,
+  xl: $grid-gutter * 3,
+);
+
 $breakpoints-map: map-keys($breakpoints);
 
 @mixin breakpoint($size) {
@@ -65,69 +75,9 @@ $breakpoints-map: map-keys($breakpoints);
   }
 }
 
-//Spacing Map
-$spacing-map: (
-  'xxs': (
-    'sm': rem-calc(10),
-    'md': rem-calc(15),
-  ),
-  'xs': (
-    'sm': rem-calc(20),
-    'md': rem-calc(20),
-  ),
-  'sm': (
-    'sm': rem-calc(20),
-    'md': rem-calc(30),
-  ),
-  'md': (
-    'sm': rem-calc(30),
-    'md': rem-calc(80),
-  ),
-  'lg': (
-    'sm': rem-calc(40),
-    'md': rem-calc(80),
-  ),
-  'xl': (
-    'sm': rem-calc(60),
-    'md': rem-calc(100),
-  ),
-);
+//Generate Flex Grid
+@mixin grid-column-classes() {
 
-//Generate Padding and Margin Class Helpers
-@each $size-label, $size-values in $spacing-map {
-  .padding-v-#{$size-label} {
-    padding-top: get-spacing($size-label, 'sm');
-    padding-bottom: get-spacing($size-label, 'sm');
-
-    @include breakpoint('lg-and-up') {
-      padding-top: get-spacing($size-label, 'md');
-      padding-bottom: get-spacing($size-label, 'md');
-    }
-  }
-
-  .margin-b-#{$size-label} {
-    margin-bottom: get-spacing($size-label, 'sm');
-
-    @include breakpoint('lg-and-up') {
-      margin-bottom: get-spacing($size-label, 'md');
-    }
-  }
 }
 
 @include grid-column-classes;
-
-.row {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  padding: rem-calc(0 30);
-  width: 100%;
-  max-width: rem-calc(1200);
-
-  &.row-reverse {
-    flex-direction: column;
-    align-items: center;
-  }
-}

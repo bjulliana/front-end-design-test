@@ -61,32 +61,11 @@ h6,
 a {
   text-decoration: none;
   line-height: inherit;
-  font-weight: 900;
+  font-weight: 700;
+  padding: $spacer-3xs 0;
   color: set-color('tertiary');
 
   &.underline {
-    position: relative;
-    display: inline-block;
-
-    &::after {
-      position: absolute;
-      transition: 0.3s ease-in-out;
-      content: '';
-      width: 0;
-      height: rem-calc(3);
-      left: 0;
-      bottom: 0;
-      background-color: set-color('tertiary');
-    }
-
-    &:focus::after,
-    &:hover::after {
-      width: 100%;
-      height: rem-calc(3);
-    }
-  }
-
-  &:hover {
-    color: set-color('tertiary');
+    @include underline();
   }
 }
