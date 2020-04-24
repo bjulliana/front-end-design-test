@@ -1,37 +1,59 @@
 <template>
-  <div class="header">
-    <div class="row">
-      <div class="col-sm12">
-        <div class="row flex-align-center">
-          <div class="col-sm12 col-md2">
-            <img src="../assets/logo.png" alt="Generic Logo" />
-          </div>
-          <div class="col-sm12 offset-md7 col-md3">
-            <div class="row flex-justify-end flex-align-center">
-              <div class="col-sm5 flex-justify-end"><a class="button-text">Login</a></div>
-              <div class="col-sm6 flex-justify-end offset-sm1"><a class="button button--pill button--small button--primary__gradient">Sign Up</a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="header padding-vertical-sm">
+    <Container>
+      <Row class="wrap">
+        <Column class="col-sm12">
+          <Row class="wrap grid-list-sm flex-align-center">
+            <Column class="col-sm5 col-md6 col-lg2">
+              <a href="#"><img :src="logo.src" :alt="logo.alt"/></a>
+            </Column>
+            <Column class="col-sm7 col-md6 offset-lg6 col-lg4">
+              <div class="button-section">
+                <a href="#" class="button--text text-white underline" v-html="button_text"></a>
+                <a href="#" class="button button--pill button--small button--primary__gradient cta-button" v-html="cta_text"></a>
+              </div>
+            </Column>
+          </Row>
+        </Column>
+      </Row>
+    </Container>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String,
+  name: 'Header',
+  data: function() {
+    return {
+      logo: {
+        src: require('@/assets/logo.png'),
+        alt: 'Generic Logo',
+      },
+      button_text: 'Log-in<span class="sr-only"> to our application</span>',
+      cta_text: 'Sign-up<span class="sr-only"> to our application</span>',
+    };
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .header {
   background-color: set-color('grey-900');
   color: set-color('white');
-  padding: rem-calc(20);
+
+  .button-section {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+
+    .button--text {
+      margin-right: $spacer-md;
+
+      @include breakpoint('lg-and-up') {
+        margin-right: $spacer-3xl;
+      }
+    }
+  }
 }
 </style>
