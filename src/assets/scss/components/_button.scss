@@ -1,7 +1,7 @@
 .button {
+  @include transition();
   display: inline-block;
-  transition: 0.3s ease-in-out;
-  background-color: set-color('default');
+  background: set-color('default');
   cursor: pointer;
   padding: rem-calc(10 25);
   text-align: center;
@@ -32,22 +32,38 @@
   }
 
   &--submit {
-    background-color: set-color('success');
-  }
-
-  &:hover,
-  &:focus {
-    background-color: set-color('primary-solid');
-    color: set-color('white');
+    background: set-color('success');
   }
 
   &--primary {
     color: set-color('white');
-    background-color: set-color('primary-solid');
+    background: set-color('primary-solid');
 
     &__gradient {
+      @include transition();
       color: set-color('white');
       background: set-color('primary-gradient');
+      background-size: 100% 100%;
+
+      &:hover,
+      &:focus {
+        background-size: 500% 100%;
+      }
+    }
+  }
+
+  &--text {
+    @include transition();
+    font-size: rem-calc(14);
+    text-transform: uppercase;
+
+    @include breakpoint('md-and-up') {
+      font-size: rem-calc(16);
+    }
+
+    &:hover,
+    &:focus {
+      background-size: 500% 100%;
     }
   }
 }
