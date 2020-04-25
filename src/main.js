@@ -7,6 +7,7 @@ import '@/assets/scss/main.scss';
 Vue.config.productionTip = false;
 
 Vue.use(Layout);
+// Vue.use(ScrollAnimation);
 
 new Vue({
   router,

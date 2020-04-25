@@ -71,7 +71,6 @@
   &--text {
     @include transition();
     font-size: rem-calc(14);
-    text-transform: uppercase;
 
     @include breakpoint('md-and-up') {
       font-size: rem-calc(16);

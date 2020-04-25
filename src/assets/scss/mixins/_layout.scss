@@ -21,15 +21,7 @@ $display-breakpoints: (
   xxl-only: "only screen and (min-width: #{map-get($breakpoints, 'xxl')})",
 );
 
-$grid-gutter: 1rem;
 $grid-columns: 12;
-$grid-gutters: (
-  xs: $grid-gutter / 4,
-  sm: $grid-gutter / 2,
-  md: $grid-gutter,
-  lg: $grid-gutter * 2,
-  xl: $grid-gutter * 3,
-);
 
 $breakpoints-map: map-keys($breakpoints);
 

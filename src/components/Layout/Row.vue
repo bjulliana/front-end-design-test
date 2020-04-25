@@ -35,7 +35,7 @@ export default {
   }
 
   &.grid-list {
-    @each $size, $gutter in $grid-gutters {
+    @each $size, $gutter in $spacing {
       &-#{ $size } {
         > .column {
           padding: ($gutter / 3) ($gutter / 2);

@@ -14,6 +14,7 @@ $spacer-5xl: $spacer-ratio * 10; // 50px
 $spacer-6xl: $spacer-ratio * 12; // 60px
 $spacer-6xl: $spacer-ratio * 12; // 60px
 $spacer-7xl: $spacer-ratio * 17; // 85px
+$spacer-8xl: $spacer-ratio * 20; // 100px
 
 $spacing: (
   3xs: $spacer-3xs,
@@ -29,6 +30,7 @@ $spacing: (
   5xl: $spacer-5xl,
   6xl: $spacer-6xl,
   7xl: $spacer-7xl,
+  8xl: $spacer-8xl,
 );
 
 @mixin GenerateSpacingClasses($spacing: $spacing) {
