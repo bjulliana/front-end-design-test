@@ -5,10 +5,10 @@
         <Column class="col-sm12">
           <Row class="grid-list-2xl wrap">
             <Column class="col-sm12 col-lg4 align-center">
-              <div class="image_wrapper fade-in__right" :style="{ backgroundImage: `url('${backgroundImage}')` }"></div>
+              <div v-scrollanimation:right class="image_wrapper" :style="{ backgroundImage: `url('${backgroundImage}')` }"></div>
             </Column>
             <Column class="col-sm12 col-lg8 content-wrapper">
-              <div class="content-wrapper__inner fade-in__left">
+              <div v-scrollanimation:left class="content-wrapper__inner">
                 <h2>{{ title }}</h2>
                 <p v-html="content"></p>
                 <a href="#" class="button--text underline">{{ buttonText }}</a>
