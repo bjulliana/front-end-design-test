@@ -10,47 +10,50 @@ h6,
 .h4,
 .h5,
 .h6 {
-  margin-bottom: rem-calc(21);
+  margin-top: 0;
+  margin-bottom: $spacer-md;
   text-rendering: optimizeLegibility;
   color: set-color('base');
   font-family: $primary-font;
   font-weight: 700;
   font-style: normal;
   line-height: 1.5;
-
-  &--subheader {
-    font-weight: 300;
-  }
 }
 
 h1,
 .h1 {
   font-size: rem-calc(26);
+  letter-spacing: rem-calc(0.75);
 }
 
 h1,
 .h1 {
   font-size: rem-calc(36);
+  letter-spacing: rem-calc(0.65);
 }
 
 h2,
 .h2 {
   font-size: rem-calc(30);
+  letter-spacing: rem-calc(0.55);
 }
 
 h3,
 .h3 {
   font-size: rem-calc(26);
+  letter-spacing: rem-calc(0.45);
 }
 
 h4,
 .h4 {
   font-size: rem-calc(22);
+  letter-spacing: rem-calc(0.40);
 }
 
 h5,
 .h5 {
   font-size: rem-calc(18);
+  letter-spacing: rem-calc(0.35);
 }
 
 h6,
@@ -68,4 +71,8 @@ a {
   &.underline {
     @include underline();
   }
+}
+
+.subheader {
+  font-weight: 300;
 }
