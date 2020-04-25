@@ -48,6 +48,8 @@ export default {
     justify-content: flex-end;
 
     .button--text {
+      text-transform: uppercase;
+      font-weight: 700;
       margin-right: $spacer-md;
 
       @include breakpoint('lg-and-up') {
