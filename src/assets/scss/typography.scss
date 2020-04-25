@@ -93,17 +93,18 @@ $font-sizes: (
     @include responsive-text('a');
     text-decoration: none;
     line-height: inherit;
-    font-weight: 700;
+    font-weight: 600;
     padding: $spacer-3xs 0;
     color: set-color('tertiary');
 
     &.underline {
       @include underline();
     }
+  }
 
-    p {
-      @include responsive-text(p);
-    }
+  p {
+    @include responsive-text(p);
+    line-height: 1.6;
   }
 
   @for $i from 1 through 6 {
