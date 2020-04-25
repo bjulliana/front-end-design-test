@@ -3,9 +3,9 @@
     <Container>
       <Row class="wrap padding-vertical-7xl">
         <Column class="col-sm11 col-lg7 align-center content-wrapper">
-          <h1 class="fade-in__top">{{ title }}</h1>
-          <p class="h3 fade-in__top subheader">{{ subheader }}</p>
-          <div class="fade-in__top button-section">
+          <h1 v-scrollanimation>{{ title }}</h1>
+          <p v-scrollanimation class="h3 subheader">{{ subheader }}</p>
+          <div v-scrollanimation class="button-section">
             <a class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
           </div>
         </Column>
