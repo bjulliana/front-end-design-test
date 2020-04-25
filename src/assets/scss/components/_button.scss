@@ -51,6 +51,22 @@
       }
     }
   }
+  &--secondary {
+    color: set-color('white');
+    background: set-color('secondary-solid');
+
+    &__gradient {
+      @include transition();
+      color: set-color('white');
+      background: set-color('secondary-gradient');
+      background-size: 100% 100%;
+
+      &:hover,
+      &:focus {
+        background-size: 500% 100%;
+      }
+    }
+  }
 
   &--text {
     @include transition();

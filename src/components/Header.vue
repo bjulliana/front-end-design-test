@@ -9,8 +9,8 @@
             </Column>
             <Column class="col-sm7 col-md6 offset-lg6 col-lg4">
               <div class="button-section">
-                <a href="#" class="button--text text-white underline" v-html="button_text"></a>
-                <a href="#" class="button button--pill button--small button--primary__gradient cta-button" v-html="cta_text"></a>
+                <a href="#" class="button--text text-white underline" v-html="buttonText"></a>
+                <a href="#" class="button button--pill button--small button--primary__gradient cta-button" v-html="ctaText"></a>
               </div>
             </Column>
           </Row>
@@ -29,8 +29,8 @@ export default {
         src: require('@/assets/logo.png'),
         alt: 'Generic Logo',
       },
-      button_text: 'Log-in<span class="sr-only"> to our application</span>',
-      cta_text: 'Sign-up<span class="sr-only"> to our application</span>',
+      buttonText: 'Log-in<span class="sr-only"> to our application</span>',
+      ctaText: 'Sign-up<span class="sr-only"> to our application</span>',
     };
   },
 };
