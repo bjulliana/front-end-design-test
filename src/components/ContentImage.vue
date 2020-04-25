@@ -23,7 +23,7 @@
 
 <script>
 export default {
-  name: 'Header',
+  name: 'ContentImage',
   data: function() {
     return {
       backgroundImage: require('@/assets/images/heart-lamps.png'),
