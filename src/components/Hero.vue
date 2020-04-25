@@ -7,7 +7,7 @@
             <Column class="col-sm11 col-lg7 align-center content-wrapper__inner">
               <h1>{{ title }}</h1>
               <p class="h3 subheader">{{ subheader }}</p>
-              <div class="button-section margin-top-md">
+              <div class="button-section">
                 <a class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
               </div>
             </Column>

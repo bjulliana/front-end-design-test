@@ -74,10 +74,3 @@ $breakpoints-map: map-keys($breakpoints);
     }
   }
 }
-
-//Generate Flex Grid
-@mixin grid-column-classes() {
-
-}
-
-@include grid-column-classes;
