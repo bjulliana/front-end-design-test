@@ -17,6 +17,7 @@ export default {
         display: flex;
         flex: 1 1 auto;
         width: percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
         min-width: 0;
       }
     }
