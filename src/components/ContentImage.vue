@@ -5,14 +5,12 @@
         <Column class="col-sm12">
           <Row class="grid-list-2xl wrap">
             <Column class="col-sm12 col-lg4 align-center">
-              <div class="image_wrapper fade-in__right">
-                <img :src="image.src" :alt="image.alt" />
-              </div>
+              <div class="image_wrapper fade-in__right" :style="{ backgroundImage: `url('${backgroundImage}')` }"></div>
             </Column>
             <Column class="col-sm12 col-lg8 content-wrapper">
               <div class="content-wrapper__inner fade-in__left">
                 <h2>{{ title }}</h2>
-                <p>{{ content }}</p>
+                <p v-html="content"></p>
                 <a href="#" class="button--text underline">{{ buttonText }}</a>
               </div>
             </Column>
@@ -28,12 +26,10 @@ export default {
   name: 'Header',
   data: function() {
     return {
-      image: {
-        src: require('@/assets/images/heart-lamps.png'),
-        alt: 'Generic Logo',
-      },
+      backgroundImage: require('@/assets/images/heart-lamps.png'),
       title: 'Make your ticket holders happy',
-      content: "A beautiful little sunset. Talent is a pursued interest. That is to say, anything you practice you can do. This is probably the greatest thing that's ever happened in my life. These things happen automatically. All you have to do is just let them happen. Just let go - and fall like a little waterfall. Nothing's gonna make your husband or wife madder than coming home and having a snow-covered dinner. Just pretend you are a whisper floating across a mountain. Zip. That easy.",
+      content:
+        "A beautiful little sunset. Talent is a pursued interest. That is to say, anything you practice you can do. This is probably the greatest thing that's ever happened in my life. These things happen automatically. All you have to do is just let them happen.<br><br>Just let go - and fall like a little waterfall. Nothing's gonna make your husband or wife madder than coming home and having a snow-covered dinner. Just pretend you are a whisper floating across a mountain. Zip. That easy.",
       buttonText: 'View full feature list',
     };
   },
@@ -63,6 +59,15 @@ export default {
     }
   }
 
+  .image_wrapper {
+    height: 100%;
+    width: 100%;
+    min-height: rem-calc(300);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -73,7 +78,7 @@ export default {
       margin-top: $spacer-xs;
 
       @include breakpoint('lg-and-up') {
-        margin-top: $spacer-xl;
+        margin-top: $spacer-md;
       }
     }
   }
