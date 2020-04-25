@@ -25,32 +25,5 @@ export default {
   &.full {
     max-width: 100%;
   }
-
-  &.grid-list {
-    @each $size, $gutter in $grid-gutters {
-      &-#{ $size } {
-        .row {
-          .column {
-            padding: ($gutter / 2);
-            box-sizing: border-box;
-          }
-          &:only-child {
-            margin: -($gutter / 2);
-          }
-          &:not(:only-child) {
-            margin: auto (-#{$gutter / 2});
-          }
-          &*:not(:only-child) {
-            .row:first-child {
-              margin-top: -($gutter / 2);
-            }
-            .row:last-child {
-              margin-bottom: -($gutter / 2);
-            }
-          }
-        }
-      }
-    }
-  }
 }
 </style>

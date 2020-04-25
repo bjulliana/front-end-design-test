@@ -2,16 +2,12 @@
   <div class="hero parallax" :style="{ backgroundImage: `url('${backgroundImage}')` }">
     <Container>
       <Row class="wrap padding-vertical-7xl">
-        <Column class="col-sm12">
-          <Row class="wrap grid-list-sm flex-align-center content-wrapper">
-            <Column class="col-sm11 col-lg7 align-center content-wrapper__inner">
-              <h1>{{ title }}</h1>
-              <p class="h3 subheader">{{ subheader }}</p>
-              <div class="button-section">
-                <a class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
-              </div>
-            </Column>
-          </Row>
+        <Column class="col-sm11 col-lg7 align-center content-wrapper">
+          <h1 class="fade-in__top">{{ title }}</h1>
+          <p class="h3 fade-in__top subheader">{{ subheader }}</p>
+          <div class="fade-in__top button-section">
+            <a class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
+          </div>
         </Column>
       </Row>
     </Container>
@@ -48,13 +44,11 @@ export default {
   background-size: cover;
 
   .content-wrapper {
-    &__inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
 </style>
