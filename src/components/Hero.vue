@@ -41,7 +41,12 @@ export default {
 <style scoped lang="scss">
 .hero {
   background-position: top;
-  background-size: cover;
+  background-size: 150% 150%;
+  background-repeat: no-repeat;
+
+  @include breakpoint('lg-and-up') {
+    background-size: cover;
+  }
 
   .content-wrapper {
     display: flex;
