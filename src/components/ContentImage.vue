@@ -33,16 +33,6 @@ export default {
       buttonText: 'View full feature list',
     };
   },
-  created() {
-    window.addEventListener('scroll', this.handleParallax);
-  },
-  methods: {
-    handleParallax() {
-      const background = document.querySelector('.parallax');
-      const scrolled = window.pageYOffset;
-      background.style.backgroundPosition = '0% ' + (-(scrolled * 0.3) + 'px');
-    },
-  },
 };
 </script>
 
