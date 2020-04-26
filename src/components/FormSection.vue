@@ -2,11 +2,12 @@
   <div class="form-section">
     <Container>
       <Row class="wrap form-section__row">
-        <h2 v-scrollanimation:right class="margin-bottom-3xl">{{ title }}</h2>
+        <h2 v-scrollanimation:right class="margin-bottom-3xl show-for-lg">{{ title }}</h2>
         <Column class="col-sm12">
           <Row class="grid-list-2xl wrap flex-align-start">
             <Column class="col-sm12 col-lg7 col-xl6 flex-order-sm2 flex-order-lg1">
               <div v-scrollanimation:right class="form-wrapper" id="contactForm">
+                <h2 v-scrollanimation:right class="margin-bottom-3xl hide-for-lg">{{ title }}</h2>
                 <form v-if="!form.submitted" class="contact-form" @submit="checkForm" action="" method="post" novalidate>
                   <div v-if="form.allErrors.length" class="error-message">
                     <p v-html="form.messages.error"></p>
@@ -60,9 +61,9 @@ export default {
       title: 'Book a demo',
       form: {
         allErrors: [],
-        submitted: true,
+        submitted: false,
         loading: false,
-        success: true,
+        success: false,
         loadingText: 'Submitting...',
         fields: [
           {
