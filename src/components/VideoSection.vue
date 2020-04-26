@@ -2,8 +2,8 @@
   <div class="video-section">
     <Container>
       <Row class="wrap video-section__row">
-        <Column v-scrollanimation class="col-sm12 col-md8 col-lg6 align-center">
-          <div class="video-container">
+        <Column class="col-sm12 col-md8 col-lg6 align-center">
+          <div v-scrollanimation:top class="video-container">
             <iframe :src="`https://www.youtube.com/embed/${videoID}?&loop=1&playlist=${videoID};rel=0&controls=1&autoplay=1&mute=1&start=0`" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:0"></iframe>
           </div>
         </Column>

@@ -1,13 +1,29 @@
 .before-enter {
-  --animationDirection: translateY(80px);
-  animation: fade-in 1.4s;
+  &__top {
+    opacity: 0;
+    &.enter {
+      animation: fade-in 1.4s;
+      -webkit-animation-fill-mode: forwards;
+      --animationDirection: translateY(80px);
+    }
+  }
 
   &__right {
-    --animationDirection: translateX(-80px);
+    opacity: 0;
+    &.enter {
+      animation: fade-in 1.4s;
+      -webkit-animation-fill-mode: forwards;
+      --animationDirection: translateX(-80px);
+    }
   }
 
   &__left {
-    --animationDirection: translateX(80px);
+    opacity: 0;
+    &.enter {
+      animation: fade-in 1.4s;
+      -webkit-animation-fill-mode: forwards;
+      --animationDirection: translateX(80px);
+    }
   }
 }
 

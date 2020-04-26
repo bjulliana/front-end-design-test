@@ -3,10 +3,10 @@
     <Container>
       <Row class="wrap padding-vertical-7xl">
         <Column class="col-sm11 col-lg7 align-center content-wrapper">
-          <h1 v-scrollanimation>{{ title }}</h1>
-          <p v-scrollanimation class="h3 subheader">{{ subheader }}</p>
-          <div v-scrollanimation class="button-section">
-            <a class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
+          <h1 v-scrollanimation:top>{{ title }}</h1>
+          <p v-scrollanimation:top class="h3 subheader">{{ subheader }}</p>
+          <div v-scrollanimation:top class="button-section">
+            <a v-smoothscroll href="#contactForm" class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
           </div>
         </Column>
       </Row>

@@ -14,6 +14,7 @@
   font-family: $primary-font;
   font-size: rem-calc(16);
   font-weight: 700;
+  border: 0;
 
   &--small {
     padding: rem-calc(5 15);
@@ -40,7 +41,6 @@
     background: set-color('primary-solid');
 
     &__gradient {
-      @include transition();
       color: set-color('white');
       background: set-color('primary-gradient');
       background-size: 100% 100%;
@@ -51,12 +51,12 @@
       }
     }
   }
+
   &--secondary {
     color: set-color('white');
     background: set-color('secondary-solid');
 
     &__gradient {
-      @include transition();
       color: set-color('white');
       background: set-color('secondary-gradient');
       background-size: 100% 100%;
@@ -69,8 +69,8 @@
   }
 
   &--text {
-    @include transition();
     font-size: rem-calc(14);
+    cursor: pointer;
 
     @include breakpoint('md-and-up') {
       font-size: rem-calc(16);
@@ -81,4 +81,21 @@
       background-size: 500% 100%;
     }
   }
+
+  &--submit {
+    color: set-color('white');
+    background: set-color('success');
+
+    &:hover,
+    &:focus {
+      color: set-color('white');
+      background: set-color('secondary-solid');
+    }
+  }
+}
+
+input[type='submit'] {
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline: 0;
 }
