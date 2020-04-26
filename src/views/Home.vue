@@ -3,6 +3,7 @@
     <Hero />
     <ContentImage />
     <VideoSection />
+    <FormSection />
   </div>
 </template>
 
@@ -10,10 +11,12 @@
 import Hero from '@/components/Hero.vue';
 import ContentImage from '@/components/ContentImage.vue';
 import VideoSection from '@/components/VideoSection';
+import FormSection from '../components/FormSection';
 
 export default {
   name: 'home',
   components: {
+    FormSection,
     VideoSection,
     Hero,
     ContentImage,
