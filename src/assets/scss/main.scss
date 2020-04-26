@@ -27,6 +27,11 @@ html {
   }
 }
 
+.main {
+  min-height: 100vh;
+  background-color: set-color('white');
+}
+
 footer,
 main,
 menu,

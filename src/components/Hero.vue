@@ -17,7 +17,7 @@
 <script>
 export default {
   name: 'Header',
-  data: function() {
+  data() {
     return {
       backgroundImage: require('@/assets/images/hero-background.png'),
       title: 'Make event management a breeze',

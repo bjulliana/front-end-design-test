@@ -55,7 +55,7 @@ import Spinner from './Snippets/Spinner';
 export default {
   name: 'FormSection',
   components: { Spinner },
-  data: function() {
+  data() {
     return {
       backgroundImage: require('@/assets/images/event-picture.png'),
       title: 'Book a demo',
@@ -112,10 +112,10 @@ export default {
     };
   },
   methods: {
-    validateEmail: function(el) {
+    validateEmail(el) {
       return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(el);
     },
-    checkForm: function(e) {
+    checkForm(e) {
       const form = this.form;
       const fields = form.fields;
       form.allErrors = [];
@@ -140,7 +140,7 @@ export default {
 
       e.preventDefault();
     },
-    loadResponse: function() {
+    loadResponse() {
       let self = this;
       this.form.submitted = true;
       this.form.loading = true;
@@ -149,7 +149,7 @@ export default {
         self.form.success = true;
       }, 2000);
     },
-    resetForm: function() {
+    resetForm() {
       this.form.success = false;
       this.form.submitted = false;
     },
