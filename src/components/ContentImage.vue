@@ -24,7 +24,7 @@
 <script>
 export default {
   name: 'ContentImage',
-  data: function() {
+  data() {
     return {
       backgroundImage: require('@/assets/images/heart-lamps.png'),
       title: 'Make your ticket holders happy',

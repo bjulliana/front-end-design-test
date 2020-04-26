@@ -15,7 +15,7 @@
 <script>
 export default {
   name: 'VideoSection',
-  data: function() {
+  data() {
     return {
       videoID: 'u31qwQUeGuM',
     };

@@ -23,7 +23,7 @@
 <script>
 export default {
   name: 'Header',
-  data: function() {
+  data() {
     return {
       logo: {
         src: require('@/assets/logo.png'),
