@@ -22,8 +22,9 @@ export default {
     padding: 0;
   }
 
-  &.full {
+  &.full-width {
     max-width: 100%;
+    padding: 0;
   }
 }
 </style>
