@@ -19,3 +19,132 @@
     height: rem-calc(3);
   }
 }
+
+@mixin responsive-text($text-size, $default-breakpoint: 'sm') {
+  $text-breakpoints-map: map-get($font-sizes, $text-size);
+  $text-breakpoints-keys: map-keys($text-breakpoints-map);
+
+  @each $breakpoint-name in $text-breakpoints-keys {
+    $text-properties: map-get($text-breakpoints-map, $breakpoint-name);
+
+    @if $breakpoint-name != $default-breakpoint {
+      $breakpoint-value: map-get($breakpoints, $breakpoint-name);
+      @include breakpoint('#{$breakpoint-name}-and-up') {
+        font-size: $text-properties;
+      }
+    } @else {
+      font-size: $text-properties;
+    }
+  }
+}
+
+$font-sizes: (
+  'h1': (
+    'sm': rem-calc(30),
+    'lg': rem-calc(36),
+  ),
+  'h2': (
+    'sm': rem-calc(26),
+    'lg': rem-calc(30),
+  ),
+  'h3': (
+    'sm': rem-calc(20),
+    'lg': rem-calc(26),
+  ),
+  'h4': (
+    'sm': rem-calc(22),
+  ),
+  'h5': (
+    'sm': rem-calc(18),
+  ),
+  'h6': (
+    'sm': rem-calc(16),
+  ),
+  'p': (
+    'sm': rem-calc(14),
+    'md': rem-calc(16),
+  ),
+  'a': (
+    'sm': rem-calc(14),
+    'md': rem-calc(16),
+  ),
+);
+
+@mixin typography-heading {
+  h1,
+  .h1 {
+    @include responsive-text(h1);
+    letter-spacing: rem-calc(0.65);
+    line-height: 1.2;
+  }
+
+  h2,
+  .h2 {
+    @include responsive-text(h2);
+    letter-spacing: rem-calc(0.55);
+    line-height: 1.2;
+  }
+
+  h3,
+  .h3 {
+    @include responsive-text(h3);
+    letter-spacing: rem-calc(0.45);
+    line-height: 1.5;
+  }
+
+  h4,
+  .h4 {
+    @include responsive-text(h4);
+    letter-spacing: rem-calc(0.4);
+    line-height: 1.5;
+  }
+
+  h5,
+  .h5 {
+    @include responsive-text(h5);
+    letter-spacing: rem-calc(0.35);
+    line-height: 1.5;
+  }
+
+  h6,
+  .h6 {
+    @include responsive-text(h6);
+  }
+
+  a {
+    @include responsive-text('a');
+    text-decoration: none;
+    line-height: inherit;
+    font-weight: 600;
+    padding: $spacer-3xs 0;
+    color: set-color('tertiary');
+
+    &.underline {
+      @include underline();
+    }
+  }
+
+  p {
+    @include responsive-text(p);
+    line-height: 1.6;
+    letter-spacing: rem-calc(0.4);
+    margin: 0;
+  }
+
+  @for $i from 1 through 6 {
+    h#{$i},
+    .h#{$i} {
+      margin-top: 0;
+      margin-bottom: $spacer-xl;
+      text-rendering: optimizeLegibility;
+      color: set-color('base');
+      font-family: $primary-font;
+      font-weight: 700;
+      font-style: normal;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
