@@ -64,6 +64,9 @@ $font-sizes: (
     'sm': rem-calc(14),
     'md': rem-calc(16),
   ),
+  'p1': (
+    'sm': rem-calc(14),
+  ),
   'a': (
     'sm': rem-calc(14),
     'md': rem-calc(16),
@@ -126,6 +129,13 @@ $font-sizes: (
 
   p {
     @include responsive-text(p);
+    line-height: 1.6;
+    letter-spacing: rem-calc(0.4);
+    margin: 0;
+  }
+
+  .p1 {
+    @include responsive-text(p1);
     line-height: 1.6;
     letter-spacing: rem-calc(0.4);
     margin: 0;
