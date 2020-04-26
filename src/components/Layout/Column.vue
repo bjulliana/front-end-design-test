@@ -20,6 +20,10 @@ export default {
         max-width: percentage($i / $grid-columns);
         min-width: 0;
       }
+
+      .flex-order-#{$breakpoint}#{$i} {
+        order: $i;
+      }
     }
   }
 }
