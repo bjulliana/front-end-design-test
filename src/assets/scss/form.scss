@@ -1,0 +1,75 @@
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea,
+select {
+  display: block;
+  transition: 0.3s ease-in-out;
+  outline: 0;
+  border: 1px solid set-color('grey-300');
+  border-radius: rem-calc(3);
+  background: transparent;
+  padding: $spacer-md;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  color: set-color('base');
+  font-size: rem-calc(16);
+  margin-top: $spacer-xs;
+}
+
+.contact-form {
+  margin-top: 0;
+  margin-bottom: rem-calc(30);
+  width: 100%;
+
+  .form-field {
+    margin-bottom: $spacer-3xl;
+
+    input {
+      &:focus {
+        border: 1px solid set-color('primary-solid');
+      }
+    }
+
+    label {
+      width: 100%;
+      font-weight: 600;
+      letter-spacing: rem-calc(0.5);
+
+      .label-required {
+        margin-left: $spacer-2xs;
+        color: set-color('danger');
+      }
+    }
+
+    .field-error {
+      color: set-color('danger');
+      font-size: rem-calc(13);
+      font-weight: 600;
+      margin-top: $spacer-xs;
+    }
+
+    &.field-error {
+      input {
+        border: 1px solid set-color('danger');
+      }
+    }
+  }
+
+  .error-message {
+    background-color: set-color('danger');
+    border: 4px solid set-color('danger-border');
+    padding: $spacer-xs;
+    color: set-color('white');
+    margin-bottom: $spacer-xl;
+
+    p {
+      font-size: rem-calc(18);
+    }
+  }
+}
