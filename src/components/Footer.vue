@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <Container class="full-width">
       <Row class="wrap footer-navigation">
         <Container>
@@ -30,14 +30,17 @@
                 <ul>
                   <li class="item-icon" v-for="(item, index) in navigation.contact.items" :key="index">
                     <span class="contact-icon" :class="item.icon"></span>
-                    <a class="p1" href="#">{{ item.title }}</a>
+                    <a class="p1" href="#"
+                      ><span class="sr-only">{{ item.label }}</span
+                      >{{ item.title }}</a
+                    >
                   </li>
                 </ul>
               </div>
             </Column>
             <Column class="col-sm12 col-md6 offset-lg1 col-lg3">
               <div class="map-wrapper">
-                <iframe :src="navigation.map" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe :src="navigation.map.url" :title="navigation.map.label" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
               </div>
             </Column>
           </Row>
@@ -53,14 +56,16 @@
             </Column>
             <Column class="col-sm12 col-md6 social-wrapper">
               <div>
-                <a class="social-icon" :href="social.url" v-for="(social, index) in navigation.social_media" :key="index"><span :class="social.icon"></span></a>
+                <a class="social-icon" :href="social.url" target="_blank" v-for="(social, index) in navigation.social_media" :key="index"
+                  ><span class="sr-only">{{ social.label }} (Opens in a new window)</span><span :class="social.icon"></span
+                ></a>
               </div>
             </Column>
           </Row>
         </Container>
       </Row>
     </Container>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -83,31 +88,40 @@ export default {
           items: [
             {
               icon: 'fas fa-phone-alt',
+              label: 'Phone',
               title: '1-888-555-5555',
             },
             {
               icon: 'fas fa-envelope',
+              label: 'Email',
               title: 'example@example.com',
             },
             {
               icon: 'fas fa-map-marker-alt',
+              label: 'Address',
               title: '123 Fake Street, London, ON A1B 2C3',
             },
           ],
         },
-        map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.835307889371!2d-81.25372648452392!3d42.98174277914997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef21d8c9d59fb%3A0xa637ea9287d6c236!2s103%20King%20St%2C%20London%2C%20ON%20N6A%206K1!5e0!3m2!1sen!2sca!4v1587939886827!5m2!1sen!2sca',
+        map: {
+          url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2918.835307889371!2d-81.25372648452392!3d42.98174277914997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882ef21d8c9d59fb%3A0xa637ea9287d6c236!2s103%20King%20St%2C%20London%2C%20ON%20N6A%206K1!5e0!3m2!1sen!2sca!4v1587939886827!5m2!1sen!2sca',
+          label: 'Google Maps of 103 Kink Street, London Ontario',
+        },
         copyright: '© Copyright Acme Inc.',
         social_media: [
           {
             icon: 'fab fa-facebook-square',
+            label: 'Facebook',
             url: 'https://www.facebook.com/',
           },
           {
             icon: 'fab fa-twitter-square',
+            label: 'Twitter',
             url: 'https://twitter.com/',
           },
           {
             icon: 'fab fa-instagram',
+            label: 'Instagram',
             url: 'http://instagram.com/',
           },
         ],
@@ -119,13 +133,6 @@ export default {
 
 <style scoped lang="scss">
 .footer {
-  @include breakpoint('lg-and-up') {
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-  }
-
   .footer-navigation {
     background-color: set-color('grey-100');
   }
@@ -150,12 +157,18 @@ export default {
       }
 
       .social-icon {
+        @include transition();
         margin-right: $spacer-lg;
         font-size: rem-calc(20);
         color: set-color('white');
 
         @include breakpoint('lg-and-up') {
           font-size: rem-calc(30);
+        }
+
+        &:hover,
+        &:focus {
+          color: set-color('secondary-solid');
         }
 
         &:last-child {
