@@ -1,12 +1,12 @@
 <template>
-  <div class="form-section">
+  <div class="form-section" id="contactForm">
     <Container>
       <Row class="wrap form-section__row">
         <h2 v-scrollanimation:right class="margin-bottom-3xl show-for-lg">{{ title }}</h2>
         <Column class="col-sm12">
           <Row class="grid-list-2xl wrap flex-align-start">
             <Column class="col-sm12 col-lg7 col-xl6 flex-order-sm2 flex-order-lg1">
-              <div v-scrollanimation:right class="form-wrapper" id="contactForm">
+              <div v-scrollanimation:right class="form-wrapper">
                 <h2 class="margin-bottom-3xl hide-for-lg">{{ title }}</h2>
                 <form v-if="!form.submitted" class="contact-form" @submit="checkForm" action="" method="post" novalidate>
                   <div v-if="form.allErrors.length" class="error-message">
