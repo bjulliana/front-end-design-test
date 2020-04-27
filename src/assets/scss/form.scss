@@ -32,7 +32,7 @@ select {
 
     input {
       &:focus {
-        border: 1px solid set-color('primary-solid');
+        border: 1px solid set-color('tertiary');
       }
     }
 
@@ -51,7 +51,10 @@ select {
       color: set-color('danger');
       font-size: rem-calc(13);
       font-weight: 600;
-      margin-top: $spacer-xs;
+
+      &:first-child {
+        margin-top: $spacer-xs;
+      }
     }
 
     &.field-error {
