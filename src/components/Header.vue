@@ -8,10 +8,10 @@
               <a href="#"><img :src="logo.src" :alt="logo.alt"/></a>
             </Column>
             <Column class="col-sm7 col-md6 offset-lg6 col-lg4">
-              <div class="button-section">
+              <nav class="button-section">
                 <a href="#" class="button--text text-white underline" v-html="buttonText"></a>
                 <a href="#" class="button button--pill button--small button--primary__gradient cta-button" v-html="ctaText"></a>
-              </div>
+              </nav>
             </Column>
           </Row>
         </Column>
