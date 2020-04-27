@@ -53,6 +53,7 @@ npm run lint
 - SCSS (Custom SCSS framework used)
 - Vanilla JS
 - No external libraries were used for features such as Smooth Scroll, Hero Parallax and Scroll Animations.
+- ChromeVox, https://achecker.ca and https://webaim.org/resources/contrastchecker/ for accessibility audit.
 
 ---
 
