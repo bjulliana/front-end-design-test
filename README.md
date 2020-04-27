@@ -57,5 +57,6 @@ npm run lint
 ---
 
 ## Improvement Suggestions
-- Use a static builder to deploy the website statically
+- Use a static builder to deploy the website statically, improving speed and accessibility.
 - Find solution for embedded assets such as Google Maps and YouTube video, in order to overcome acessibility issues.
+- Add lazy load for the images.
