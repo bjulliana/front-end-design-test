@@ -59,4 +59,3 @@ npm run lint
 ## Improvement Suggestions
 - Use a static builder to deploy the website statically
 - Find solution for embedded assets such as Google Maps and YouTube video, in order to overcome acessibility issues.
-- 
