@@ -7,13 +7,13 @@
           <Row class="grid-list-2xl wrap flex-align-start">
             <Column class="col-sm12 col-lg7 col-xl6 flex-order-sm2 flex-order-lg1">
               <div v-scrollanimation:right class="form-wrapper" id="contactForm">
-                <h2 v-scrollanimation:right class="margin-bottom-3xl hide-for-lg">{{ title }}</h2>
+                <h2 class="margin-bottom-3xl hide-for-lg">{{ title }}</h2>
                 <form v-if="!form.submitted" class="contact-form" @submit="checkForm" action="" method="post" novalidate>
                   <div v-if="form.allErrors.length" class="error-message">
                     <p v-html="form.messages.error"></p>
                   </div>
                   <div class="form-field" v-for="(field, index) in form.fields" :key="index" :class="{ 'field-error': field.error.length }">
-                    <label :for="field.name">{{ field.label }}<span class="label-required" v-if="field.required">*</span></label>
+                    <label :for="field.name">{{ field.label }}<span class="sr-only" v-if="field.required">Field Required</span><span class="label-required" v-if="field.required" aria-hidden="true">*</span></label>
                     <input v-model="field.value" :id="field.name" :type="field.type" :name="field.name" />
                     <div v-if="field.error.length">
                       <p class="field-error" v-for="(error, index) in field.error" :key="index">{{ error }}</p>
