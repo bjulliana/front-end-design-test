@@ -6,7 +6,7 @@
           <h1 v-scrollanimation:top>{{ title }}</h1>
           <p v-scrollanimation:top class="h3 subheader">{{ subheader }}</p>
           <div v-scrollanimation:top class="button-section">
-            <a v-smoothscroll href="#contactForm" class="button button--pill button--large button--secondary__gradient">{{ buttonText }}</a>
+            <a v-smoothscroll href="#contactForm" class="button button--pill button--large button--secondary__gradient">{{ buttonText }}<span class="sr-only">Scrolls to Bottom of Page</span></a>
           </div>
         </Column>
       </Row>
