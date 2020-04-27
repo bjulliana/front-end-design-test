@@ -8,6 +8,7 @@
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Form Functionality](#form-functionality)
 - [Tools](#tools-and-libraries-used)
 - [Project Notes](#improvement-suggestions)
 
@@ -46,6 +47,15 @@ npm run build
 ```
 npm run lint
 ```
+---
+
+## Form Functionality
+
+There is no form submission implemented, all was built with Vanilla JS. To test the form validation:
+1. Submit the empty form to validate the fields. To validate the email field you can provide a value that is not an email.
+2. If all the fields are validated the loading message will show up.
+3. After 2 seconds of loading, it will display the success message.
+
 ---
 
 ## Tools and Libraries Used
